@@ -22,7 +22,6 @@
 			text-align: center;
 		}
 	</style>
-
 </head>
 <body class="board">
 	<!-- HTML for the box -->
@@ -35,28 +34,41 @@
 			/* global &*/
 
 			// Variable declarations
+			var position = 0;
+			var points = 0;
+			var speed = 10;
 			var box;
 			var boardWidth;
 			var update;
 			var handleBoxClick;
+			var direction = 1;
 
 			// jQuery stuff setup for you
 			box = $('.box');
 			boardWidth = $('.board').width();
 
 			// TODO 2
-
 			
 			var update = function() {
 				// TODO 3 / 6 / 7 / 8
-				
+				position = position + (speed * direction);
+				box.css('left', position);
+				if(position >=boardWidth) {
+    				direction = -1;
+				}
+				if(position < 0){
+					direction = 1;
+				}
 			};
 
 
 			
 			var handleBoxClick = function() {
 				// TODO 4 / 5
-				
+				position = 0;         // reset the position of the box to 0
+				speed = speed + 3;    // increase the speed of the box on every click
+				points = points + 1;   // increase the point total
+				box.text(points);      // update the new points total displayed by the box
 			};
 
 
