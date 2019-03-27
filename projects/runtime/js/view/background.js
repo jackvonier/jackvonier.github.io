@@ -27,7 +27,7 @@ var background = function (window) {
         // called at the start of game and whenever the page is resized
         function render() {
             // useful variables
-            var canvasWidth = app.canvas.width;
+            var canvasWidth = app.canvas.width
             var canvasHeight = app.canvas.height;
             var groundY = ground.y;
 

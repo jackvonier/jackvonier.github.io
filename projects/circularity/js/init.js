@@ -38,7 +38,7 @@ var init = function (window) {
 
         // TODO 7 : Create a Loop to call drawCircle 100 times
         var counter = 0;
-        while (counter < 100){
+        while (counter < 500){
             drawCircle();
             counter++;
         }
